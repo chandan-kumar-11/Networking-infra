@@ -1,7 +1,7 @@
 resource "aws_instance" "grafana_server" {
   ami             = "ami-005e54dee72cc1d00" 
   instance_type   = var.instance_type
-  key_name        = grafana-test.pem
+  key_name        = "grafana-test"
   subnet_id       = aws_subnet.private.id
 #   security_groups = [aws_security_group.sg.id]
 
