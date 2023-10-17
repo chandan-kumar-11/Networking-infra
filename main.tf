@@ -50,7 +50,7 @@ resource "aws_internet_gateway" "igw" {
 resource "aws_subnet" "public" {
   vpc_id                  = aws_vpc.application_vpc.id
   cidr_block              = var.public_subnet_cidr_block
-  availability_zone       = var.public_subnet_availability_zone
+  availability_zone       = "us-west-2a"
   map_public_ip_on_launch = true
 
   tags = {
@@ -61,7 +61,7 @@ resource "aws_subnet" "public" {
 resource "aws_subnet" "private" {
   vpc_id                  = aws_vpc.application_vpc.id
   cidr_block              = var.private_subnet_cidr_block
-  availability_zone       = var.private_subnet_availability_zone
+  availability_zone       = "us-west-2b"
 
   tags = {
     Name = "private-subnet"
