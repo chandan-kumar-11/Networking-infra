@@ -14,21 +14,6 @@ terraform {
   }
 }  
 
-# variable "region" {
-#   description = "AWS region"
-# }
-
-# variable "vpc_cidr_block" {
-#   description = "CIDR block for the VPC"
-# }
-
-# variable "public_subnet_cidr_block" {
-#   description = "CIDR block for the public subnet"
-# }
-
-# variable "private_subnet_cidr_block" {
-#   description = "CIDR block for the private subnet"
-# }
 
 
 
@@ -126,13 +111,3 @@ resource "aws_s3_bucket" "example_bucket" {
   
 }
 
-
-
-# terraform {
-#   backend "s3" {
-#     bucket         = "grafana-json-collector"  # Replace with your S3 bucket name
-#     key            = "."
-#     region         = "us-west-2"  # Replace with your desired AWS region
-#     dynamodb_table = "terraform-lock"  # Replace with your DynamoDB table name for locking
-#   }
-# }
