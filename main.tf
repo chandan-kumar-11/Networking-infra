@@ -14,6 +14,15 @@ terraform {
   }
 }  
 
+terraform {
+  backend "s3" {
+    bucket = "grafana-json-collector"
+    region = "us-west-2"
+    key = "terraform.tfstate"
+    dynamodb_table = "terraform-lock"
+    encrypt = true
+  }
+}
 
 
 
@@ -106,8 +115,8 @@ resource "aws_nat_gateway" "nat" {
   }
 }
 
-resource "aws_s3_bucket" "example_bucket" {
-  bucket = "grafana-json-collector"
+# resource "aws_s3_bucket" "example_bucket" {
+#   bucket = "grafana-json-collector"
   
-}
+# }
 
